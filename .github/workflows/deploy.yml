@@ -1,0 +1,104 @@
+name: Build & Push to GHCR & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  build:
+    name: Build & Push Image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Variables (Lowercase Owner & Repo)
+        run: |
+          OWNER_REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "IMAGE=ghcr.io/${OWNER_REPO}" >> $GITHUB_ENV
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ env.IMAGE }}:latest
+          cache-from: type=registry,ref=${{ env.IMAGE }}:buildcache
+          cache-to: type=registry,ref=${{ env.IMAGE }}:buildcache,mode=max
+
+  deploy:
+    name: Deploy to VPS via SSH
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTOR: ${{ github.actor }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          envs: GH_TOKEN,ACTOR,REPO_OWNER,REPO_NAME
+          script: |
+            OWNER=$(echo "$REPO_OWNER" | tr '[:upper:]' '[:lower:]')
+            REPO=$(echo "$REPO_NAME" | tr '[:upper:]' '[:lower:]')
+            IMAGE=ghcr.io/$OWNER/$REPO
+            
+            # Login ke GitHub Container Registry di VPS
+            echo "$GH_TOKEN" | docker login ghcr.io -u "$ACTOR" --password-stdin
+            
+            # Ambil image terbaru
+            docker pull $IMAGE:latest
+            
+            # Hentikan & hapus container lama jika sedang berjalan
+            docker stop operator-wifi-app || true
+            docker rm operator-wifi-app || true
+            
+            # Buat struktur direktori storage persisten di host jika belum ada
+            mkdir -p $HOME/operator-wifi-storage/app/public
+            mkdir -p $HOME/operator-wifi-storage/framework/cache/data
+            mkdir -p $HOME/operator-wifi-storage/framework/sessions
+            mkdir -p $HOME/operator-wifi-storage/framework/views
+            mkdir -p $HOME/operator-wifi-storage/logs
+            
+            # Atur hak akses agar www-data (UID 33) di dalam container bisa menulis ke storage
+            sudo chown -R 33:33 $HOME/operator-wifi-storage
+            sudo chmod -R 775 $HOME/operator-wifi-storage
+            
+            # Jalankan container baru
+            docker run -d \
+              --name operator-wifi-app \
+              -p 8002:80 \
+              --env-file $HOME/.env-operator-wifi \
+              -v $HOME/operator-wifi-storage:/var/www/html/storage \
+              --restart unless-stopped \
+              $IMAGE:latest
+            
+            # Berikan waktu 5 detik untuk container melakukan booting awal
+            sleep 5
+            
+            # Bersihkan cache & jalankan migrasi database
+            docker exec operator-wifi-app php artisan optimize:clear
+            docker exec operator-wifi-app php artisan migrate --force
