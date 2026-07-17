@@ -56,7 +56,7 @@ const Index = ({ auth, pelanggan, success }) => {
                     <div>
                         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Kelola Pelanggan</h2>
                         <p className="text-gray-600 dark:text-gray-400 mt-1">
-                            Management data pelanggan ASTINet
+                            Management data pelanggan KUANTARNet
                         </p>
                     </div>
                 </div>

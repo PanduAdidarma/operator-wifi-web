@@ -46,7 +46,7 @@ const CustomerLogin = ({ status, errors: sessionErrors, success }) => {
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Halaman ini digunakan untuk pelanggan yang sudah terdaftar
                         agar dapat mengakses layanan dan fitur eksklusif dari{" "}
-                        <span className="text-cyan-600 font-semibold">ASTINet</span>.
+                        <span className="text-cyan-600 font-semibold">KUANTARNet</span>.
                     </p>
                 </div>
 

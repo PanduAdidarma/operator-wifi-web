@@ -63,7 +63,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <Wifi className="h-8 w-8 text-[#38adc3]" />
             <span className="text-2xl font-bold">
-              AS<span className="gradient-text">TIN</span>et
+              KUAN<span className="gradient-text">TAR</span>Net
             </span>
           </div>
           <nav className="hidden md:flex gap-6">
@@ -179,7 +179,7 @@ export default function Home() {
               className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
             >
               Solusi Internet Cepat & Handal Bersama{" "}
-              <span className="gradient-text">ASTINet</span>
+              <span className="gradient-text">KUANTARNet</span>
             </motion.h1>
             <motion.p
               variants={fadeInUp}
@@ -232,13 +232,13 @@ export default function Home() {
           >
             <motion.div variants={fadeInUp}>
               <p className="text-sm font-semibold text-[#38adc3] mb-2 uppercase tracking-wide">
-                Tentang ASTINet
+                Tentang KUANTARNet
               </p>
               <h2 className="text-4xl font-bold mb-6">
                 Solusi Internet Cepat dan Handal
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                ASTINet hadir sebagai penyedia layanan internet (ISP) lokal yang fokus pada
+                KUANTARNet hadir sebagai penyedia layanan internet (ISP) lokal yang fokus pada
                 kecepatan, stabilitas, dan pelayanan terbaik. Kami memahami betapa pentingnya
                 koneksi internet dalam kehidupan sehari-hari baik untuk bekerja, belajar, maupun hiburan.
               </p>
@@ -270,8 +270,8 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://ext.same-assets.com/2769669130/1942010007.webp"
-                  alt="About ASTINet"
+                  src="/about_astinet.jpg"
+                  alt="About KUANTARNet"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -295,7 +295,7 @@ export default function Home() {
               Fitur Unggulan
             </motion.p>
             <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-4">
-              12 Keunggulan ASTINet
+              12 Keunggulan KUANTARNet
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-600 max-w-2xl mx-auto">
               Solusi internet cepat dan stabil untuk kebutuhan rumah, bisnis, hingga komunitas Anda
@@ -323,7 +323,7 @@ export default function Home() {
               {
                 icon: Clock,
                 title: "Support 24 Jam",
-                description: "Tim ASTINet selalu siap membantu Anda kapan saja, termasuk tengah malam. Respons cepat dan ramah.",
+                description: "Tim KUANTARNet selalu siap membantu Anda kapan saja, termasuk tengah malam. Respons cepat dan ramah.",
               },
               {
                 icon: Bot,
@@ -429,7 +429,7 @@ export default function Home() {
               },
               {
                 title: "Pemasangan & Monitoring",
-                description: "Tim ASTINet siap melakukan instalasi, upgrade, dan pengecekan jaringan secara cepat.",
+                description: "Tim KUANTARNet siap melakukan instalasi, upgrade, dan pengecekan jaringan secara cepat.",
               },
             ].map((service, i) => (
               <motion.div key={i} variants={fadeInUp}>
@@ -571,7 +571,7 @@ export default function Home() {
               Testimoni
             </motion.p>
             <motion.h2 variants={fadeInUp} className="text-4xl font-bold">
-              Apa Kata Pengguna ASTINet
+              Apa Kata Pengguna KUANTARNet
             </motion.h2>
           </motion.div>
 
@@ -586,32 +586,32 @@ export default function Home() {
               {
                 name: "Rendy Pratama",
                 role: "Remote Worker",
-                text: "Sejak pakai ASTINet, kerjaan online jadi lancar tanpa putus-putus. Support-nya juga responsif banget kalau ada kendala.",
+                text: "Sejak pakai KUANTARNet, kerjaan online jadi lancar tanpa putus-putus. Support-nya juga responsif banget kalau ada kendala.",
               },
               {
                 name: "Rahmat",
                 role: "Mahasiswa",
-                text: "Koneksi ASTINet di kosan saya stabil banget. Streaming, Zoom, dan game nggak pernah buffering. Mantap!",
+                text: "Koneksi KUANTARNet di kosan saya stabil banget. Streaming, Zoom, dan game nggak pernah buffering. Mantap!",
               },
               {
                 name: "Budi Santoso",
                 role: "Owner Toko Online",
-                text: "ASTINet bantu bisnis kecil saya tetap online. Transaksi lancar dan pelanggan puas karena WiFi toko stabil.",
+                text: "KUANTARNet bantu bisnis kecil saya tetap online. Transaksi lancar dan pelanggan puas karena WiFi toko stabil.",
               },
               {
                 name: "Dewi Kurnia",
                 role: "Ibu Rumah Tangga",
-                text: "Customer service ASTINet cepat tanggap. Baru laporan gangguan pagi, sore langsung beres. Salut!",
+                text: "Customer service KUANTARNet cepat tanggap. Baru laporan gangguan pagi, sore langsung beres. Salut!",
               },
               {
                 name: "Putri Ayu",
                 role: "Teknisi IT",
-                text: "Sebagai teknisi, saya tahu kualitas jaringan. Dan jujur, ASTINet jaringannya bersih dan minim masalah.",
+                text: "Sebagai teknisi, saya tahu kualitas jaringan. Dan jujur, KUANTARNet jaringannya bersih dan minim masalah.",
               },
               {
                 name: "Puji Astuti",
                 role: "Founder Startup",
-                text: "Startup kami butuh koneksi cepat & stabil. Pilihan jatuh ke ASTINet karena performanya konsisten.",
+                text: "Startup kami butuh koneksi cepat & stabil. Pilihan jatuh ke KUANTARNet karena performanya konsisten.",
               },
             ].map((testimonial, i) => (
               <motion.div key={i} variants={fadeInUp}>
@@ -665,7 +665,7 @@ export default function Home() {
             <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
-                  q: "Apakah ASTINet tersedia di daerah saya?",
+                  q: "Apakah KUANTARNet tersedia di daerah saya?",
                   a: "Silakan hubungi tim kami melalui WhatsApp atau formulir kontak untuk memastikan ketersediaan layanan di lokasi Anda. Kami terus memperluas jangkauan tiap bulannya.",
                 },
                 {
@@ -673,20 +673,20 @@ export default function Home() {
                   a: "Biaya pemasangan bervariasi tergantung area dan jenis paket. Namun umumnya mulai dari Rp100.000. Promo bebas biaya pasang juga tersedia di waktu tertentu.",
                 },
                 {
-                  q: "Apakah semua paket ASTINet unlimited?",
-                  a: "Ya, seluruh paket ASTINet bersifat unlimited tanpa FUP, sehingga Anda bisa menggunakan internet sepuasnya tanpa takut kuota habis atau kecepatan turun.",
+                  q: "Apakah semua paket KUANTARNet unlimited?",
+                  a: "Ya, seluruh paket KUANTARNet bersifat unlimited tanpa FUP, sehingga Anda bisa menggunakan internet sepuasnya tanpa takut kuota habis atau kecepatan turun.",
                 },
                 {
                   q: "Bagaimana jika koneksi saya bermasalah?",
-                  a: "Tim support ASTINet siap membantu Anda setiap hari. Cukup hubungi kami melalui WhatsApp, dan teknisi kami akan segera memeriksa kendala Anda secara remote atau onsite.",
+                  a: "Tim support KUANTARNet siap membantu Anda setiap hari. Cukup hubungi kami melalui WhatsApp, dan teknisi kami akan segera memeriksa kendala Anda secara remote atau onsite.",
                 },
                 {
                   q: "Apakah tersedia layanan untuk bisnis dan kantor?",
                   a: "Tentu! Kami menyediakan paket khusus untuk UMKM, kantor, dan lembaga pendidikan dengan kecepatan tinggi, SLA uptime, dan dukungan prioritas.",
                 },
                 {
-                  q: "Bagaimana cara berlangganan ASTINet?",
-                  a: "Anda bisa mendaftar langsung melalui website, hubungi kami via WhatsApp, atau datang ke kantor ASTINet terdekat. Prosesnya cepat dan mudah!",
+                  q: "Bagaimana cara berlangganan KUANTARNet?",
+                  a: "Anda bisa mendaftar langsung melalui website, hubungi kami via WhatsApp, atau datang ke kantor KUANTARNet terdekat. Prosesnya cepat dan mudah!",
                 },
               ].map((faq, i) => (
                 <AccordionItem key={i} value={`item-${i}`} className="bg-white px-6 rounded-lg border">
@@ -713,7 +713,7 @@ export default function Home() {
             variants={stagger}
           >
             <motion.h2 variants={fadeInUp} className="text-4xl font-bold mb-6">
-              Siap Beralih ke ASTINet?
+              Siap Beralih ke KUANTARNet?
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-xl mb-8 opacity-90">
               Hubungi kami sekarang dan nikmati internet cepat & stabil
@@ -755,13 +755,13 @@ export default function Home() {
                 </p>
                 <p>
                   <Mail className="inline h-4 w-4 mr-2" />
-                  info@ASTINet.co.id
+                  info@kuantarnet.co.id
                 </p>
               </div>
             </div>
 
             <div>
-              <h3 className="font-semibold text-white mb-4">ASTINet</h3>
+              <h3 className="font-semibold text-white mb-4">KUANTARNet</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href="#" className="hover:text-[#38adc3] transition-colors">
@@ -841,10 +841,10 @@ export default function Home() {
 
           <div className="border-t border-gray-800 pt-8 text-center text-sm">
             <p>
-              © Copyright <span className="font-semibold text-white">ASTINet</span> All Rights Reserved
+              © Copyright <span className="font-semibold text-white">KUANTARNet</span> All Rights Reserved
             </p>
             <p className="mt-2">
-              Designed by ASTINet | Distributed By ASTINet
+              Designed by KUANTARNet | Distributed By KUANTARNet
             </p>
           </div>
         </div>

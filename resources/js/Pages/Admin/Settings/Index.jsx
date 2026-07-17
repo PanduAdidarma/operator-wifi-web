@@ -20,7 +20,7 @@ const Settings = ({ auth, flash }) => {
 
     // Form untuk application settings
     const { data: appData, setData: setAppData, post: updateAppSettings, processing: appProcessing, errors: appErrors } = useForm({
-        company_name: 'ASTINet',
+        company_name: 'KUANTARNet',
         company_address: '',
         company_phone: '',
         currency: 'IDR',
@@ -228,7 +228,7 @@ const Settings = ({ auth, flash }) => {
                                         Pengaturan Aplikasi
                                     </h3>
                                     <p className="text-green-700 dark:text-green-400 text-sm">
-                                        Konfigurasi pengaturan umum aplikasi ASTINet.
+                                        Konfigurasi pengaturan umum aplikasi KUANTARNet.
                                     </p>
                                 </div>
 

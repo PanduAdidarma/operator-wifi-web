@@ -30,7 +30,7 @@ const AdminLayout = ({ user, header, children }) => {
             >
                 <div className="flex items-center justify-center h-16 border-b border-gray-200 dark:border-gray-700">
                     <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                        ASTINet ADMIN
+                        KUANTARNet ADMIN
                     </span>
                 </div>
                 <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">

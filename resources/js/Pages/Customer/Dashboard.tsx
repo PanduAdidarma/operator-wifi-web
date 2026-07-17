@@ -271,7 +271,7 @@ export default function CustomerDashboard() {
   };
 
   const handleWhatsApp = () => {
-    const message = `Halo ASTINet, saya ${pelanggan.nama_pelanggan} ingin berlangganan paket internet.`;
+    const message = `Halo KUANTARNet, saya ${pelanggan.nama_pelanggan} ingin berlangganan paket internet.`;
     const phone = "6281382552884";
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
   };
@@ -622,7 +622,7 @@ export default function CustomerDashboard() {
           <div className="flex items-center gap-2">
             <Wifi className="h-8 w-8 text-[#38adc3]" />
             <span className="text-2xl font-bold">
-              AS<span className="gradient-text">TIN</span>et
+              KUAN<span className="gradient-text">TAR</span>Net
             </span>
           </div>
           <nav className="hidden md:flex gap-6">
@@ -809,7 +809,7 @@ export default function CustomerDashboard() {
               variants={fadeInUp}
               className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
             >
-              Kelola paket internet dan pembayaran Anda dengan mudah melalui dashboard ASTINet.
+              Kelola paket internet dan pembayaran Anda dengan mudah melalui dashboard KUANTARNet.
             </motion.p>
             
             {pendingPembayaran && (

@@ -52,7 +52,7 @@ const CustomerRegister = () => {
                     </h1>
                     <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
                         Daftarkan diri Anda untuk menikmati layanan internet
-                        <span className="text-cyan-600 font-semibold"> ASTINet</span>.
+                        <span className="text-cyan-600 font-semibold"> KUANTARNet</span>.
                         Lengkapi data dengan benar agar proses aktivasi berjalan lancar.
                     </p>
                 </div>

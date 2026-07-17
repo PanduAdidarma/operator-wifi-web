@@ -48,7 +48,7 @@ export default function AdminLogin() {
                     </h1>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Halaman ini khusus untuk administrator sistem{' '}
-                        <span className="text-cyan-600 font-semibold">ASTINet</span>.
+                        <span className="text-cyan-600 font-semibold">KUANTARNet</span>.
                         Masukkan kredensial yang valid untuk mengakses panel administrasi.
                     </p>
                 </div>
