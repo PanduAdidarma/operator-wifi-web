@@ -1,10 +1,11 @@
 # --- Stage 1: Build Frontend Assets (Vite) ---
-FROM node:20-alpine AS frontend-builder
+FROM node:20-slim AS frontend-builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 RUN npm run build
+
 
 # --- Stage 2: Production PHP & Apache ---
 FROM php:8.2-apache
